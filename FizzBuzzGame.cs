@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace FizzBuzz
 {
     public class FizzBuzzGame
@@ -6,11 +8,13 @@ namespace FizzBuzz
 
             var result = "";
 
-            if(number % 3 == 0) {
+            var digits = number.ToString().ToCharArray();
+
+            if(number % 3 == 0 || digits.Any(x => x == '3')) {
                 result += "Fizz";
             }
 
-            if (number % 5 == 0) {
+            if (number % 5 == 0 || digits.Any(x => x == '5')) {
                 result += "Buzz";
             }
 
