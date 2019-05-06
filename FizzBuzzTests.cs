@@ -33,5 +33,26 @@ namespace FizzBuzz
 
             Assert.Equal("Fizz", actual);
         }
+
+        [Theory]
+        [InlineData(5)]
+        [InlineData(10)]
+        public void ShouldSayBuzzWhenNumberIsDivisbleByFive(int number)
+        {
+            var actual = game.Count(number);
+
+            Assert.Equal("Buzz", actual);
+        }
+
+        [Theory]
+        [InlineData(15)]
+        [InlineData(30)]
+        [InlineData(45)]
+        public void ShouldSayFizzBuzzWhenDivisbleByBothThreeAndFive(int number)
+        {
+           var actual = game.Count(number);
+
+            Assert.Equal("FizzBuzz", actual); 
+        }
     }
 }

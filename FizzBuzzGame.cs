@@ -4,11 +4,17 @@ namespace FizzBuzz
     {
         public string Count(int number) {
 
+            var result = "";
+
             if(number % 3 == 0) {
-                return "Fizz";
+                result += "Fizz";
             }
 
-            return number.ToString();
+            if (number % 5 == 0) {
+                result += "Buzz";
+            }
+
+            return result.Length > 0 ? result : number.ToString();
         }
     }
 }
